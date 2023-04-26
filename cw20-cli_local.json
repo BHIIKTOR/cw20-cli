@@ -1,0 +1,10 @@
+{
+  "juno": {
+    "testing": {
+      "code_ids": {
+        "mysupercontract:1": 3
+      },
+      "tacoDeploy": {}
+    }
+  }
+}

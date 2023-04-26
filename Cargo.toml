@@ -1,0 +1,24 @@
+[package]
+name = "mysupercontract"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio                   = { version = "1.4", features = ["full"] }
+cosmwasm-std            = { version = "1.1" }
+cw-multi-test           = { version = "0.16.4" }
+anyhow                  = "1.0"
+serde                   = { version = "1.0.103", default-features = false, features = ["derive"] }
+serde_json              = "1.0"
+cw-orc                  = { path="../cw-orchestrate/cw-orc", features = ["daemon"] }
+cw20                    = { git = "https://github.com/AbstractSDK/cw-plus.git" }
+cw20-base               = { git = "https://github.com/AbstractSDK/cw-plus.git" }
+uid                     = "0.1.7"
+dotenvy                 = "0.15"
+log                     = "0.4.14"
+env_logger              = "0.10.0"
+pretty_env_logger       = "0.4"
+clap                    = { version = "4.2.4", features = ["derive"] }
+
+[dev-dependencies]
+speculoos               = "0.11.0"
