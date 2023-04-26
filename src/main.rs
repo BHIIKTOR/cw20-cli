@@ -77,9 +77,6 @@ struct Transfer {
 struct FindTx {
     #[arg(long, required = true)]
     hash: String,
-
-    #[arg(long)]
-    json: bool
 }
 
 #[derive(Subcommand, Debug)]
@@ -133,15 +130,7 @@ fn main() {
         },
         Commands::FindTx(opts) => {
             match contract.find_tx(opts.hash) {
-                Ok(res) => {
-                    if opts.json {
-                        // serde_json::value::to_value(&res);
-                        // println!("{:#?}", serde_json::to_string(&res));
-                        // serde_json::to_string_pretty::<TxResponse<Daemon>>(&res);
-                    } else {
-                        println!("{:#?}", res);
-                    }
-                },
+                Ok(res) => println!("{:#?}", res),
                 Err(err) => panic!("Error: {}", err.to_string()),
             }
         },
